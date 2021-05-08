@@ -27,7 +27,6 @@ function textoRecortado(texto, posicionRecorte){
 
 TODO:
 //Ejercicio 3
-
 //code ...
 
 //Ejercicio 4
