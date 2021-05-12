@@ -14,7 +14,7 @@ function conteoNumerosPorCaracter(texto) {
   }
 }
 
-//Ejercicio 2
+//Ejercicio 2 METODO SLICE
 function textoRecortado(texto, posicionRecorte){
   if (typeof(texto) !== "string" && typeof(posicionRecorte) !== "number"){
     console.error("No se acepta otro tipo de datos que no sea string o la cadena de texto esta vacía.")
@@ -25,16 +25,21 @@ function textoRecortado(texto, posicionRecorte){
   }
 }
 
-TODO:
-//Ejercicio 3
-//code ...
+//Ejercicio 3 METODO STRING.SPLIT("")
+function destructurarCadena(texto) {
+  if (typeof(texto) !== "string") {
+    console.error('No se acepta otro tipo de datos que no sea string, ya que no cuentan con longitud.')
+  } else {
+    let textoSeparado = texto.split(" ");
+    console.log(textoSeparado);
+  }
+}
 
-//Ejercicio 4
+//Ejercicio 4 METODO REPEAT
 function repetirTextos(texto, repeticiones){
   if (typeof(texto) !== "string" && typeof(posicionRecorte) !== "number"){
     console.error("No se acepta otro tipo de datos que no sea string o la cadena de texto esta vacía.")
   } else {
-    // let agregarEspacio = texto.padEnd(parseInt(texto.length), ' ');
     let mensajeFinal = agregarEspacio.repeat(repeticiones);
     console.log(mensajeFinal);
   }
