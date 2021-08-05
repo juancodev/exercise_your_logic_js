@@ -28,14 +28,37 @@ const invertirCaracter = (texto = "") =>
 invertirCaracter(); // warning
 invertirCaracter("Hola Mundo"); // odnuM aloH
 
-function encontrarPalabraRepetida(texto, palabraRepetida){
-  let obtenerArreglo = texto.split(" ");
-  let compararPalabrasRepetidas = obtenerArreglo.indexOf(palabraRepetida);
-  while (compararPalabrasRepetidas != -1) {
-    compararPalabrasRepetidas = obtenerArreglo.indexOf(palabraRepetida, compararPalabrasRepetidas + 1);
+
+// EJERCICIO 6 METODO indexOf()
+function encontrarPalabraRepetida(texto = "", palabraRepetida = ""){
+  if (!texto) {
+    return console.warn("no ingresaste el texto largo");
+  }
+  if (!palabraRepetida) {
+    return console.warn("no ingresaste la palabra a evaluar");
   }
 
-  return compararPalabrasRepetidas;
+  let posicion = 0,
+  contador = 0;
+
+  while (posicion !== -1) {
+  posicion = texto.indexOf(palabraRepetida, posicion);
+    if (posicion !== -1) {
+    posicion++;
+      contador++;
+    }
+  }
+
+  return console.info(`La palabra a buscar ${palabraRepetida} se repite ${contador}`);
 }
-// let obtenerValor = texto.split(" ").filter((text, i, texto) => texto.indexOf(text) !== i).length;
-//console.log(obtenerValor);
+
+// EJERCICIO 7 Se aplica los mismos métodos del ejercicio 5 pero validando si es lo mismo que lo escrito.
+
+function validarPalabraPalindromo(texto = "") {
+  if (!texto) return console.warn("no ingresaste el texto");
+
+  texto = texto.toLowerCase();
+  let palabraRevertida = texto.split('').reverse().join('');
+
+  return palabraRevertida === texto ? true : false;
+}
