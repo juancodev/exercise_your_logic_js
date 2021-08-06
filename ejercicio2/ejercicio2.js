@@ -62,3 +62,14 @@ function validarPalabraPalindromo(texto = "") {
 
   return palabraRevertida === texto ? true : false;
 }
+
+//EJERCICIO 8 Expresiones regulares.
+
+const obtenerDatosSinRegExp = (texto = "", removerPalabra = "") =>
+  (!texto)
+  ? console.warn("no pasaste los datos específico")
+  : (!removerPalabra)
+  ? console.warn("no pasaste ninguna palabra a remover")
+  : console.info(texto.replace(new RegExp(removerPalabra, "ig"), ""));
+
+// En este caso se evalúa si la cadeta de texto y la palabra a remover no están vacios; de estarlo te muestra una advertencia. Seguido de eso al pasar valores, llegamos a la línea 73 en donde creamos un console.info() en donde dentro va a tener la cadena de texto pasada por parámetros junto su método "replace", en el cual, dentro tendrá una nueva instancia del objeto "new RegExp" y como parámetro tiene la expresión regular que va a validar y el segundo parámetro es la bandera u opciones que permite realizar. Una vez encontrada la expresión, le pasamos el segundo parámetro a la función replace que en este caso es el valor a reemplazar, como se puede observar, no se quiere remplazar por ningún valor sino se quiere quitar.
