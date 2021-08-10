@@ -14,10 +14,12 @@ function ObtenerNumeroAleatorio(min, max){
 }
 
 //Ejercicio 10  toString().split('').reverse().join('')
-function numeroCapicua(numero) {
+function numeroCapicua(numero = 0) {
   let obtenerNumero = numero.toString().split('').reverse().join('');
   let numeroEntero = parseInt(obtenerNumero);
   (numeroEntero === numero)
   ? console.info(`El número ${numero} es capicúa`)
   : console.warn(`El número ${numero} no es capicúa`);
 }
+
+//Ejercicio 10 Factorial Javascript
