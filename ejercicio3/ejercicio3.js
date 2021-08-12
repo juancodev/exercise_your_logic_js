@@ -14,10 +14,30 @@ function ObtenerNumeroAleatorio(min, max){
 }
 
 //Ejercicio 10  toString().split('').reverse().join('')
-function numeroCapicua(numero) {
+function numeroCapicua(numero = 0) {
+  if (!numero) return console.warn("No ingresaste un número");
+
   let obtenerNumero = numero.toString().split('').reverse().join('');
-  let numeroEntero = parseInt(obtenerNumero);
+  let numeroEntero = obtenerNumero;
   (numeroEntero === numero)
   ? console.info(`El número ${numero} es capicúa`)
   : console.warn(`El número ${numero} no es capicúa`);
+}
+
+//Ejercicio 11 Realizamos un ciclo for que me multiplique el total * las veces que itera.
+
+function calcularFactorial(numero = undefined) {
+  if (numero === undefined) return console.warn("No ingresó un número");
+
+  if (typeof numero !== "number") return console.error(`El valor "${numero}" ingresado, NO es un número`);
+
+  if (numero === 0) return console.error("El número no puede ser 0");
+
+  if (Math.sign(numero) === -1) return console.error("No puede validar números negativos");
+
+  let total = 1;
+  for(i = 1; i <= numero; i++){
+    total = total * i;
+  }
+  return console.log(`El factorial de ${numero} es igual a ${total}`);
 }
