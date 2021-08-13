@@ -5,7 +5,7 @@
 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 */
 
-//Ejercicio 12
+//Ejercicio 12: Calcular número primo con un ciclo for
 
 function numerosPrimos(numero = undefined) {
   if (numero === undefined) return console.warn("No escribió ningún número")
