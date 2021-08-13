@@ -19,3 +19,17 @@ function numerosPrimos(numero = undefined) {
   }
   return true;
 }
+
+//Ejercicio 13: 
+
+function validarNumeros(numero = undefined) {
+  if (numero === undefined) return console.warn("No escribió ningún número");
+
+  if (typeof numero !== "number") return console.error(`El valor ${numero} debe ser un número`);
+
+  for (let i = 1; i < numero; i++) {
+    if (numero % i === 0) return console.info(`El número ${numero} es par`);
+  
+    if (numero % i !== 0) return console.info(`El número ${numero} es impar`);
+  }
+}
