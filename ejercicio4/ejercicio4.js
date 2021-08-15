@@ -20,16 +20,36 @@ function numerosPrimos(numero = undefined) {
   return true;
 }
 
-//Ejercicio 13: 
+//Ejercicio 13: Utilizamos el operador de módulo que nos presenta javascript (%)
 
 function validarNumeros(numero = undefined) {
   if (numero === undefined) return console.warn("No escribió ningún número");
 
   if (typeof numero !== "number") return console.error(`El valor ${numero} debe ser un número`);
 
-  for (let i = 1; i < numero; i++) {
-    if (numero % i === 0) return console.info(`El número ${numero} es par`);
-  
-    if (numero % i !== 0) return console.info(`El número ${numero} es impar`);
+  let esPar = numero % 2;
+
+  (esPar === 0)
+  ? console.log(`El número ${numero} es par`)
+  : console.log(`El número ${numero} es impar`);
+
+}
+
+//Ejercicio 14:
+
+function calcularGradosFahrenheit(grados = undefined, unidad = undefined) {
+  if (grados === undefined) return console.log("No has agregado ningún grado");
+  if (unidad === undefined) return console.log("No has agregado ninguna unidad");
+  if (typeof grados !== "number") return console.error(`El valor ${grados} no es válido`);
+  if (typeof unidad !== "string") return console.error(`La unidad ${unidad} no es reconocida`);
+  if(unidad.length > 1 || !/(C|F)/.test(unidad)) return console.warn(`La unidad ${unidad} no es una unidad válida`);
+
+  if (unidad === "C") {
+    return console.info(`${grados}°C = ${Math.round((grados * (9/5)) + 32)}°F`);
+  } else if (unidad === "F"){
+    return console.info(`${grados}°F = ${Math.round(((grados - 32) * (5/9)))}°C`);
   }
+  // formula de grados Celsius a fahrenheit = ((grados * 9) / 5) + 32;
+
+  // formula de grados Fahrenheit a Celcius = ((grados - 32) * (5/9));
 }
