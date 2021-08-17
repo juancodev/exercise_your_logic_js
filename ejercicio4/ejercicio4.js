@@ -8,9 +8,9 @@
 //Ejercicio 12: Calcular número primo con un ciclo for
 
 function numerosPrimos(numero = undefined) {
-  if (numero === undefined) return console.warn("No escribió ningún número")
+  if (numero === undefined) return console.warn("No escribió ningún número");
 
-  if (typeof numero !== "number") return console.error(`El valor ${numero} debe ser un número`)
+  if (typeof numero !== "number") return console.error(`El valor ${numero} debe ser un número`);
 
   if (numero === 0 || numero === 1 || numero === 4) return console.warn(`El ${numero} no es un número primo porque no puede ser por ${numero}`);
 
@@ -35,7 +35,7 @@ function validarNumeros(numero = undefined) {
 
 }
 
-//Ejercicio 14:
+//Ejercicio 14: Utilizamos expresiones regulares y la clase Math para redondear los decimales
 
 function calcularGradosFahrenheit(grados = undefined, unidad = undefined) {
   if (grados === undefined) return console.log("No has agregado ningún grado");
