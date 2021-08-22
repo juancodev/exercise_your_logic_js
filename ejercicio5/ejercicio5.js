@@ -31,16 +31,35 @@ const obtenerBaseDecimal = (numero = undefined, base = undefined) => {
   }
 }
 
-//EJERCICIO 16: Como sacar el porcentaje de descuento de un producto.
+//EJERCICIO 16: Utilizamos una formula (precio - (precio*(porcentaje / 100)))
 
-const calcularDescuento = (precio = undefined, porcentaje = undefined)=> {
+const calcularDescuento = (precio = undefined, porcentaje = 0)=> {
   if (precio === undefined) return console.warn("No escribió ningún precio");
-  if(porcentaje === undefined) return console.warn("No agregó ningún porcentaje");
+  if (precio === 0) return console.error("El monto no puede ser 0");
+  if (Math.sign(precio) === -1) return console.error("No puede validar números negativos");
   if (typeof precio !== "number") return console.error(`El precio ${precio} no es válido`);
   if (typeof porcentaje !== "number") return console.error(`El porcentaje ${porcentaje} no es válido`);
+  if (Math.sign(porcentaje) === -1) return console.error("No puede validar números negativos");
 
   let descuento = porcentaje / 100;
   let precioConDescuento = precio - (precio * descuento);
 
   console.info(`El precio ${precio} con descuento del ${porcentaje}% es ${precioConDescuento}`);
+}
+
+//Ejercicio 17 : Forma de cómo calcular el año transcurrido
+
+const calcularAnios = (fecha = undefined) =>{
+ if (fecha === undefined) return console.log("No ingresaste una fecha");
+ if(!(fecha instanceof Date)) return console.error(`No ingresaste una fecha válida`);
+
+ let hoyMenosFecha = new Date().getTime() - fecha.getTime()
+ let aniosEnMS = 1000 * 60 * 60 * 24 * 365 // Para saber cuántos MS = 1año
+ let aniosHumanos = Math.floor(hoyMenosFecha / aniosEnMS);
+
+ return (Math.sign(aniosHumanos) === -1)
+ ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+ : (Math.sign(aniosHumanos) === 1)
+  ? console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
+  : console.info(`Estamos en el año actual ${fecha.getFullYear()}`);
 }
