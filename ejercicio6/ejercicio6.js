@@ -17,3 +17,21 @@ const calcularVocalesConsonates = (texto = "") => {
 }
 
 //Ejercicio 19:
+
+const validarNombre = (nombre = "")=>{
+  if (!nombre) return console.warn("No ingresaste ningún valor");
+  if(typeof nombre !== "string") return console.error(`El valor ${nombre} no es válido`);
+  let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚúü\s]+$/g.test(nombre);
+  /*^: no puede haber nada antes de la expresión
+  $: no puede haber nada después de la expresión
+  []: agrupadores
+  +: Evalúe por cada caracter que tiene la cadena de texto.
+  [A-Z]: Evalúa las mayúsculas.
+  [a-z]: minúsculas.
+  \s: para que contemple espacios en blancos
+  test(): va a evaluar si se cumple la confición o no.
+  */
+ return (expReg)
+ ? console.info(`"${nombre}", es un nombre válido`)
+ : console.warn(`"${nombre}", NO es un nombre válido`);
+}
