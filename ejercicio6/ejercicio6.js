@@ -11,7 +11,7 @@
 const calcularVocalesConsonates = (texto = "") => {
  if(!texto) return console.warn("No ingresaste ningún valor");
  if(typeof texto !== "string") return console.error(`El valor ${texto} no es válido`);
- let numerosVocales = texto.match(/[aeiou]/gi).length;
+ let numerosVocales = texto.match(/[áéíóúaeiouü]/gi).length;
  let numerosConsonantes = texto.match(/[bcdfghjklmnñpqrstvwxyz]/ig).length;
  return console.log(`El número de las vocales son: ${numerosVocales} y el número de consonantes son: ${numerosConsonantes}`);
 }
