@@ -16,7 +16,7 @@ const calcularVocalesConsonates = (texto = "") => {
  return console.log(`El número de las vocales son: ${numerosVocales} y el número de consonantes son: ${numerosConsonantes}`);
 }
 
-//Ejercicio 19:
+//Ejercicio 19: Utilizamos expresiones regulares
 
 const validarNombre = (nombre = "")=>{
   if (!nombre) return console.warn("No ingresaste ningún valor");
@@ -34,4 +34,17 @@ const validarNombre = (nombre = "")=>{
  return (expReg)
  ? console.info(`"${nombre}", es un nombre válido`)
  : console.warn(`"${nombre}", NO es un nombre válido`);
+}
+
+//Ejercicio 20: Expresión regular que nos permite validar email
+
+const validarEmail = (email = "") =>{
+  if (!email) return console.warn("No enviaste ningún email");
+  if (typeof email !== "string") return console.error(`El ${email} no es un valor válido`);
+
+  let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+  return (expReg)
+  ? console.info(`"${email}", es un email válido`)
+  : console.warn(`"${email}", NO es un email válido`);
 }
