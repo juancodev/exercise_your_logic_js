@@ -6,9 +6,24 @@
 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
 */
 
-//Ejercicio 21:
+//Ejercicio 21: utilizando el método map para interactuar el arreglo principal y muta otro arreglo con unos nuevos valores.
 
-const numerosElevadoAlCuadrado = (arr = undefined) => {
- if (arr === undefined) return console.warn("No ingresaste ningún dato");
-  if (!(arr instanceof Array)) return console.error(`El ${arr} no es válido`);
+const numerosElevadoAlCuadrado = (arreglo = undefined) => {
+  if (arreglo === undefined) return console.warn("No ingresaste ningún dato");
+
+  if (!(arreglo instanceof Array)) return console.error(`El ${arr} no es válido`);
+
+  if (arreglo.length === 0) return console.error(`No se puede pasar un arreglo vacío`);
+
+  for (const num of arreglo) {
+    if (typeof num !== "number") return console.error("No puedes pasar otro tipo de dato que no sea número");
+  };
+
+  const numeros = arreglo;
+  const numerosElevados = numeros.map((number)=>{
+    return number * number;
+  })
+  console.info(`Arreglo original ${arreglo}; arreglo elevado al cuadrado ${numerosElevados}`);
 }
+
+//Ejercicio 22:
