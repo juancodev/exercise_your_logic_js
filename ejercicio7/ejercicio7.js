@@ -26,4 +26,19 @@ const numerosElevadoAlCuadrado = (arreglo = undefined) => {
   console.info(`Arreglo original ${arreglo}; arreglo elevado al cuadrado ${numerosElevados}`);
 }
 
-//Ejercicio 22:
+//Ejercicio 22: Utilizamos Math.max.apply() para hallar el valor mayor de un array numérico. Y Math.min.apply() para hallar el valor menor de un array numérico.
+
+const hallarMayorYMenor = (arreglo = undefined) =>{
+  if (arreglo === undefined) return console.warn("No ingresaste un valor");
+
+  if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array valido`);
+
+  for (const num of arreglo) {
+    if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como un valor para este ejercicio.`);
+  }
+
+  let valorMayor = Math.max.apply(null, arreglo);
+  let valorMenor = Math.min.apply(null, arreglo);
+
+  return console.info(`Del array ${arreglo}, el número mayor es: ${valorMayor} y el número menor es: ${valorMenor}. [${valorMayor}, ${valorMenor}]`);
+}
