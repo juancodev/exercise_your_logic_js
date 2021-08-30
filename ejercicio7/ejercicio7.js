@@ -33,12 +33,48 @@ const hallarMayorYMenor = (arreglo = undefined) =>{
 
   if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array valido`);
 
+  if (arreglo.length === 0) return console.error("No puedes pasar un array vacío");
+
   for (const num of arreglo) {
-    if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como un valor para este ejercicio.`);
+    if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como valor para este ejercicio.`);
   }
 
   let valorMayor = Math.max.apply(null, arreglo);
   let valorMenor = Math.min.apply(null, arreglo);
 
   return console.info(`Del array ${arreglo}, el número mayor es: ${valorMayor} y el número menor es: ${valorMenor}. [${valorMayor}, ${valorMenor}]`);
+}
+
+const valoresParesEImpares = (arreglo = undefined) => {
+  if (arreglo === undefined) return console.warn("No ingresaste un valor");
+
+  if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array`);
+
+  if (arreglo.length === 0) return console.error("No puedes pasar un array vacío");
+
+  for (const num of arreglo) {
+    if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como valor para este ejercicio`);
+  }
+
+  const pares = [];
+  const impares = [];
+
+  for (let i = 0; i < arreglo.length; i++) {
+    if (i % 2 === 0) {
+      impares.push(arreglo[i]);
+    } else {
+      pares.push(arreglo[i]);
+    }
+  }
+
+  return console.info(`El array original: [${arreglo}]\nPares: {${pares}}\nImpares: {${impares}}`);
+
+  /*
+  Otra forma de resolverlo.
+
+  return console.info({
+    pares: arr.filter(num => num % 2 === 0),
+    impares: arr.filter(num => num % 2 === 1)
+  })
+  */
 }
