@@ -19,17 +19,26 @@ const ordenarArray = (arreglo = undefined) => {
     if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como valor para este ejercicio`);
   }
 
+  // Ordenar Ascendente.
   // function comparar(a, b) {
   //   return a - b;
   // };
 
-  // return console.info(`El array original:${arreglo}\n${arreglo.sort((a,b)=> a - b)}`);
+  // Ordenar Descendente.
+  // function comparar(a, b) {
+  //   return b - a;
+  // };
 
-  TODO:TERMINAR_EL_EJERCICIO
+  let ascendente = arreglo.sort((a, b)=> a - b);
+  let descendente = arreglo.sort((a, b) => b - a);
 
-  return console.info({
-    ascendente: arreglo.sort((a, b)=> a - b),
-    descendente: arreglo.sort((a, b) => a - b).reverse()
-    //me muestra los valores revertidos y no de forma descendente.
-  });
+
+  return console.info(`El array original:${arreglo}\nDe forma ascendente: ${ascendente}\nDe forma descendente: ${descendente}`);
+
+
+  // return console.info({
+  //   ascendente: ascendente,
+  //   descendente: descendente
+  // });
+
 }
