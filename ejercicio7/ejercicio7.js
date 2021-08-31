@@ -45,6 +45,8 @@ const hallarMayorYMenor = (arreglo = undefined) =>{
   return console.info(`Del array ${arreglo}, el número mayor es: ${valorMayor} y el número menor es: ${valorMenor}. [${valorMayor}, ${valorMenor}]`);
 }
 
+//Ejercicio 23: Se utilizó un ciclo for para saber cuáles eran los números pares e impares dependiendo del resultado entre el módulo (%) 2.
+
 const valoresParesEImpares = (arreglo = undefined) => {
   if (arreglo === undefined) return console.warn("No ingresaste un valor");
 
