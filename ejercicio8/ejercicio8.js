@@ -62,3 +62,13 @@ const eliminarDuplicados = (arreglo = undefined) =>{
 
   return console.info(`El array original: [${arreglo}]\nEl array sin duplicados: [${eliminarValoresDuplicados}]`);
 }
+
+//Ejercicio 26:
+
+const calcularPromedio = (arreglo = undefined) =>{
+  if (arreglo === undefined) return console.warn("No ingresaste un valor");
+
+  if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array`);
+
+  if (arreglo.length === 0) return console.error("No puedes pasar un array vacío");
+}
