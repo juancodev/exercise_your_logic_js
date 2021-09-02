@@ -29,8 +29,8 @@ const ordenarArray = (arreglo = undefined) => {
   //   return b - a;
   // };
 
-  let ascendente = arreglo.sort((a, b)=> a - b);
-  let descendente = arreglo.sort((a, b) => b - a);
+  let ascendente = arreglo.map(el => el).sort();
+  let descendente = arreglo.map(el => el).sort().reverse();
 
 
   return console.info(`El array original:${arreglo}\nDe forma ascendente: ${ascendente}\nDe forma descendente: ${descendente}`);
@@ -41,4 +41,24 @@ const ordenarArray = (arreglo = undefined) => {
   //   descendente: descendente
   // });
 
+}
+
+//Ejercicio 25: Utilizamos el método filter para poder generar un nuevo arreglo que cumpla la condición puesta.
+
+const eliminarDuplicados = (arreglo = undefined) =>{
+  if (arreglo === undefined) return console.warn("No ingresaste un valor");
+
+  if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array`);
+
+  if (arreglo.length === 0) return console.error("No puedes pasar un array vacío");
+
+  if (arreglo.length === 1) return console.warn("Mínimo debe contener 2 elementos");
+
+  const eliminarValoresDuplicados = arreglo.filter((el, index, self)=> self.indexOf(el) === index)
+
+  /*Otra forma de hacerlo
+  const eliminarValoresDuplicados = [... new Set(arreglo)]
+  ["x", 10, 2, "10", true]*/
+
+  return console.info(`El array original: [${arreglo}]\nEl array sin duplicados: [${eliminarValoresDuplicados}]`);
 }
