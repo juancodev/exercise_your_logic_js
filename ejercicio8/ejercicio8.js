@@ -63,7 +63,7 @@ const eliminarDuplicados = (arreglo = undefined) =>{
   return console.info(`El array original: [${arreglo}]\nEl array sin duplicados: [${eliminarValoresDuplicados}]`);
 }
 
-//Ejercicio 26:
+//Ejercicio 26: utilizamos el método reduce(), el cual, nos permite reducir los valores en un único valor
 
 const calcularPromedio = (arreglo = undefined) =>{
   if (arreglo === undefined) return console.warn("No ingresaste un valor");
@@ -71,4 +71,15 @@ const calcularPromedio = (arreglo = undefined) =>{
   if (!(arreglo instanceof Array)) return console.error(`El ${arreglo} no es un array`);
 
   if (arreglo.length === 0) return console.error("No puedes pasar un array vacío");
+
+  if (arreglo.length === 1) return console.warn("Mínimo debe contener 2 elementos");
+
+  for (const num of arreglo) {
+    if (typeof num !== "number") return console.error(`No puedes pasar un ${num} como valor para este ejercicio`);
+  }
+
+  let suma = arreglo.reduce((acumulador, numeros)=> acumulador += numeros);
+  let promedio = suma / arreglo.length;
+
+  console.info(`El promedio del arreglo es: ${promedio}`);
 }
