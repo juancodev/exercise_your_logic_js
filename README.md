@@ -9,7 +9,7 @@
 - [Twitter](https://twitter.com/juancms98)
 - [Facebook](https://www.facebook.com/profile.php?id=100067363884753)
 - [Instagram](https://www.instagram.com/juancms98/)
-- [My Web site](https://juancms98.github.io/Portfolio/)
+- [My Web site](https://juancodev.github.io/Portfolio/)
   
   <img src="https://res.cloudinary.com/juancms98/image/upload/v1630885661/juancms98_yzbssj.png" width="700" heigth="700">
 
