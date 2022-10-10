@@ -1,3 +1,5 @@
+![Logo](https://res.cloudinary.com/juancms98/image/upload/v1665415315/logo_omudfv.png)
+
 # 🏋‍♂ Ejercicios para mejorar tu lógica de programación con Javascript
 
 ## 💪 ¡Les comparto mi solución de los siguientes ejercicios!
